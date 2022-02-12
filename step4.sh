@@ -1,6 +1,6 @@
 # Upload 3.webm to youtube.com ...
 
-# Download 3.webm from youtube.com as 4.web. In my case:
+# Download 3.webm from youtube.com as 4.webm. In my case:
 
 # https://youtu.be/DQB9fi2ixhQ # --output 4.webm
 md5sum 4.webm
