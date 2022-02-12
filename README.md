@@ -52,3 +52,9 @@ bash step6.sh
 bash step7.sh
 # Preparing a video comparing two parts: 2_.mp4 and 5.webm.  
 ```
+
+OR for shortening:
+
+```bash
+bash run.sh
+```
