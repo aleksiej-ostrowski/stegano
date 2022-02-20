@@ -8,9 +8,51 @@
 #                                #
 # ------------------------------ #
 
+import ctypes
+
+lib = ctypes.cdll.LoadLibrary('./mix2.so')
+
+def mix_two(one_image, two_image, save_image, s=101):
+    return lib.mix_two(one_image.encode('utf-8'), two_image.encode('utf-8'), save_image.encode('utf-8'), s)
+
+def extract_two(one_image, width_two, height_two, save_image, s=101):
+    return lib.extract_two(one_image.encode('utf-8'), width_two, height_two, save_image.encode('utf-8'), s)
+
+def size_of_image(image):
+
+    from PIL import Image
+
+    with Image.open(image) as im:
+        return im.size
+
+if __name__ == "__main__":
+
+    one = "one.png"
+    two = "two.png"
+
+    mxt = "mixed.png"
+    dxt = "demixed.png"
+
+    w1, h1 = size_of_image(one)
+    w2, h2 = size_of_image(two)
+
+    if w1 * h1 <= w2 * h2:
+        assert "Image #1 must be larger than Image #2"
+
+    r1 = mix_two(one, two, mxt, 102)
+    r2 = extract_two(mxt, w2, h2, dxt, 102)
+
+    print('crc = ', r1, r2)
+
+    if (r1 != r2) or (r1 == 0) or (r2 == 0):
+        assert "Mix/extract does not work."
+
+    print("Autotest is ok.")
+
+'''
+
 from PIL import Image
 from random import seed, randint
-
 
 def mix_two(one_image, two_image, save_image, s=101):
 
@@ -119,3 +161,5 @@ if __name__ == "__main__":
         assert "Extract does not work."
 
     print("Autotest is ok.")
+
+'''    

@@ -1,3 +1,5 @@
+echo "=== step 4 ==="
+
 # Upload 3.webm to youtube.com ...
 
 # Download 3.webm from youtube.com as 4.webm. In my case:

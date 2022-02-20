@@ -1,3 +1,5 @@
+echo "=== step 1 ==="
+
 mkdir frames1 frames2 audio1 audio2
 
 ffmpeg -i 1.mp4 "./frames1/out-%8d.png"
@@ -8,4 +10,5 @@ ffmpeg -i 2_.mp4 "./frames2/out-%8d.png"
 ffmpeg -i 2_.mp4 "./audio2/audio.ogg"
 cp "./frames1/out-00000001.png" "./one.png"
 cp "./frames2/out-00000001.png" "./two.png"
+go build -buildmode=c-shared -o mix2.so mix2.go
 python3.9 mix.py

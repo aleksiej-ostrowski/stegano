@@ -60,5 +60,5 @@ bash run.sh
 ```
 
 ## TODO
-- [ ] Rewriting the module mix.py in golang.
+- [X] Rewriting the module mix.py in golang.
 
