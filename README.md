@@ -63,5 +63,5 @@ bash run.sh
 - [X] Rewriting the module mix.py in golang.
 
 
-## Paper
+## Paper about this
 [Стеганографические эксперименты с видеофайлами и Youtube (in Russian)](https://habr.com/ru/post/651905/)
