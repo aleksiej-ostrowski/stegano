@@ -8,4 +8,4 @@ echo "=== step 4 ==="
 md5sum 4.webm
 
 mkdir frames4
-ffmpeg -i 4.webm "./frames4/out-%8d.png"
+time ffmpeg -i 4.webm "./frames4/out-%8d.png"
