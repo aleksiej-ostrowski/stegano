@@ -10,7 +10,7 @@
 
 from glob import glob
 from mix import mix_two
-from os import path, link
+from os import link
 # from shutil import copyfile
 
 
@@ -75,7 +75,7 @@ def main():
         key_s = i1 + i2
         if key_s in hash_s.keys():
             tail_old, crc_old = hash_s[key_s]
-            os.link(
+            link(
                 "./{fl}/{tail}".format(fl=args.resfolder, tail=tail_old),
                 "./{fl}/{tail}".format(fl=args.resfolder, tail=tail),
             )
