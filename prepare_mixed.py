@@ -1,6 +1,6 @@
 # ------------------------------- #
 #                                 #
-#  version 0.0.1                  #
+#  version 0.0.2                  #
 #                                 #
 #  Aleksiej Ostrowski, 2022       #
 #                                 #
@@ -10,8 +10,8 @@
 
 from glob import glob
 from mix import mix_two
-from os import path
-from shutil import copyfile
+from os import path, link
+# from shutil import copyfile
 
 
 def flatten(lst: list[str]) -> list[str]:
@@ -75,7 +75,7 @@ def main():
         key_s = i1 + i2
         if key_s in hash_s.keys():
             tail_old, crc_old = hash_s[key_s]
-            copyfile(
+            os.link(
                 "./{fl}/{tail}".format(fl=args.resfolder, tail=tail_old),
                 "./{fl}/{tail}".format(fl=args.resfolder, tail=tail),
             )
